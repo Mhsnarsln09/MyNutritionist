@@ -4,6 +4,10 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, si
 import { toast } from "react-hot-toast"
 import store from "./store"
 import { login as loginHandle, logout as logoutHandle } from "./store/auth";
+import { getFirestore, collection, addDoc, serverTimestamp} from "firebase/firestore"
+
+
+
 
 const firebaseConfig = {
     apiKey: process.env.REACT_APP_API_KEY,
@@ -17,12 +21,17 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
+export const db = getFirestore(app)
 
 export const register = async (email, password) => {
     try {
         const { user } = await createUserWithEmailAndPassword(auth, email, password)
+        toast.success("You are registered. ",{
+            duration: 2000
+        })
 
         return user
+        
     } catch (error) {
         toast.error(error.message)
 
@@ -51,18 +60,24 @@ export const logout = async (email, password) => {
 }
 onAuthStateChanged(auth, (user)=>{
     if(user){
-
-    }else{
-
-    }
-})
-onAuthStateChanged(auth, (user)=>{
-    if(user){
-        
         store.dispatch(loginHandle(user))
     }else{
         store.dispatch(logoutHandle())
     }
 })
+
+export const addMessage = async data =>{
+    try{
+    data.createdAt = serverTimestamp()
+    const result = await addDoc(collection(db, "messages"), data)
+    return result.id 
+    } catch(error){
+        toast.error(error.message)
+    }
+    
+}
+
+
+
 
 export default app

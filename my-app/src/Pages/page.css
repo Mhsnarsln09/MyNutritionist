@@ -23,13 +23,19 @@
     border-radius: 50%;
 }
 .textpage1{
+    cursor: pointer;
     height: 10%;
     width: 30%;
-    margin-top: 10%;
-    margin-left: 10%;
-    padding: 1rem;
+    margin-top: 9%;
+    margin-left: 8%;
+    padding: 2rem;
     border-style: outset;
     border-radius: 20%;
+}
+.hph2{
+    color: #003865;
+    font-family: 'Italianno', cursive;
+    font-size: 3rem;
 }
 
 /* ABOUT PAGE */
@@ -70,22 +76,17 @@
 }
 
 /* LOGIN PAGE */
-.loginpage {
-    background-color: #D9AFD9;
-    background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
 
-    height: 100vh;
-}
 
 .loginheader {
     text-align: center;
     font-family: 'Italianno', cursive;
     font-size: 1100%;
-    color: #003865;
+    color: #3FA796;
 }
 
 .loginformbox {
-
+    display: flex;
     justify-content: center;
     margin-top: 1%;
     margin-left: 38%;
@@ -149,6 +150,7 @@
 
 
 
+
 /* REGISTER PAGE */
 
 .registerformbox {
@@ -178,4 +180,124 @@
 .regh5 span {
     cursor: pointer;
     color: #5800FF
+}
+/* TRAINING PAGE */
+.trainingpage{
+    margin-top: 5%;
+}
+.trainingimg{
+    border-radius: 10px;
+}
+.searchbox {
+    border: 1px solid #dee2e6;
+    height: 60px;
+    border-radius: 40px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.searchbox input.searchbox-input {
+    border: none;
+    height: 40px;
+    width: calc(100% - 50px);
+    border-image: none;
+    border-color: none;
+    background: transparent;
+    outline: none;
+}
+
+.searchbox span {
+  cursor: pointer;
+  margin-right: 1%;
+}
+.sort{
+    display: flex;
+    justify-content: center;
+    padding-top: 15%;
+}
+/* NUTRITIONIST PAGE */
+.logodiv img{
+    height: 700px;
+
+}
+.chatdiv { 
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.chatdivul{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: fixed;
+    bottom: 14%;
+    right: 22%;
+}
+.frm {
+    border: 1px solid #dee2e6;
+    height: 60px;
+    border-radius: 40px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    width: 75%;
+    background-color: whitesmoke;
+}
+
+.frm input.frm-input {
+    border: none;
+    height: 40px;
+    width: calc(100% - 40px);
+    border-image: none;
+    border-color: none;
+    background: transparent;
+    outline: none;
+}
+.frm-btn{
+    display: flex;
+    height: 50px;
+    align-items: center;
+    margin-right: 0.75%;
+    border-radius: 30px;
+}
+/* MY DİET PLAN PAGE */
+.bckimg{
+    background-image: url("../../public/logo.png");
+    width: 100%;
+    height: 100vh;
+}
+.dietdiv{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2%;
+    box-shadow: 0px 0px 12px #ccc;
+    border-radius: 8px;
+    padding: 3rem;
+    width: 75%;
+    height: 100vh;
+    background-color: #fff;
+    color: #003865;
+
+
+}
+.dietdiv h4{
+    text-align: center;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 700,
+    'GRAD' 200,
+    'opsz' 48
+  }
+.dieth1{
+    color: #003865;
+    font-family: 'Italianno', cursive;
+    font-size: 5rem;
 }
